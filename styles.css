@@ -9,15 +9,35 @@ body {
     color: #feeb00;
 }
 
+.box {
+    flex: 1;
+    margin: 0;
+    background-color: #ffffff;
+    border: 4px solid #000000;
+    min-width: 10px;
+    min-height: 10px;
+}
+
 #wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;;
     width: 100%;
 }
 
+#resize-container {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+}
+
 #drawing-container {
-    
+    display: flex;
+    background-color: #ffffff;
+    border: 4px solid #000000;
+    border-radius: 4px;
+    width: 500px;
+    height: 500px;
 }
 
 
