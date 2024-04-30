@@ -27,3 +27,10 @@ function fillBoard(boxes) {
     }
 }
 
+function clearBoard() {
+    const boxes = document.querySelectorAll("#drawing-container div");
+
+    boxes.forEach((box) => {
+        box.remove()
+    });
+}
