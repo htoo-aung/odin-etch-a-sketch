@@ -1,5 +1,7 @@
 const drawingBoard = document.getElementById("drawing-container");
 
+const userInput = document.getElementById("board-size");
+
 const applyBtn = document.getElementById("apply-btn");
 const eraseBtn = document.getElementById("erase-btn");
 const multicolorBtn = document.getElementById("multicolor-btn");
@@ -27,10 +29,18 @@ function fillBoard(boxes) {
     }
 }
 
+
 function clearBoard() {
     const boxes = document.querySelectorAll("#drawing-container div");
+
+    // Check if board is empty
 
     boxes.forEach((box) => {
         box.remove()
     });
 }
+
+applyBtn.addEventListener('click', () => {
+    fillBoard(userInput.value);
+    userInput.value = "";
+});
