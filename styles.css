@@ -24,8 +24,6 @@ h1 {
 .box {
     margin: 0;
     background-color: #ffffff;
-    min-width: 10px;
-    min-height: 10px;
 }
 
 #wrapper {
@@ -46,8 +44,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     background-color: #ffffff;
-    /* border-radius: 4px; */
-    width: 500px;
+    width: 800px;
     height: 500px;
 }
 
