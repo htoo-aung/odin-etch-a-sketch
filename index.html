@@ -12,13 +12,26 @@
     <div id="wrapper">
         <h1 id="header" class="text">Etch A Sketch</h1>
         <div id="resize-container">
-            <input type="text" placeholder="Enter number (1 to 100) " id="board-size-input" name="board-size-input">
+            <input type="text" placeholder="Enter number (1 to 100)" id="board-size-input" name="board-size-input">
             <button id="apply-btn" class="btn">Apply</button>
+            <button id="draw-btn" class="btn">Draw</button>
             <button id="erase-btn" class="btn">Erase</button>
             <button id="multicolor-btn" class="btn">Multicolor</button>
+            <div id="colour-select-container">
+                <label id="colour-select-label" for="colour-select">Colour:</label>
+                <select id="colour-select" onchange="showSelectedValue()">
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="indigo">Indigo</option>
+                    <option value="violet">Violet</option>
+                </select>
+            </div>
         </div>
-        <div id="drawing-container">
-
+        <div id="center">
+            <div id="drawing-container"></div>
         </div>
     </div>
 </body>
