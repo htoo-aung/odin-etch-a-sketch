@@ -7,7 +7,7 @@ const eraseBtn = document.getElementById("erase-btn");
 const multicolorBtn = document.getElementById("multicolor-btn");
 
 let drawOn = true;
-
+let multicolor = false;
 
 
 function fillBoard(boxes) {
@@ -43,11 +43,11 @@ function clearBoard() {
 }
 
 applyBtn.addEventListener('click', () => {
-    
     if (userInput.value > 100 || userInput.value < 1) {
         userInput.style.border = "2px black solid";
     }
     else {
+        clearBoard();
         fillBoard(userInput.value);
         userInput.style.border = "0";
     }
@@ -57,4 +57,8 @@ applyBtn.addEventListener('click', () => {
 
 eraseBtn.addEventListener('click', () => {
     drawOn = false;
+});
+
+multicolorBtn.addEventListener('click', () => {
+    multicolor = true;
 });
