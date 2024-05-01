@@ -8,7 +8,7 @@ const eraseBtn = document.getElementById("erase-btn");
 const multicolorBtn = document.getElementById("multicolor-btn");
 const colourSelect = document.getElementById("colour-select");
 
-let colour = "red";
+let colour = "black";
 let drawOn = true;
 let multicolor = false;
 
