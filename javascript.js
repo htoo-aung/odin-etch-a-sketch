@@ -1,10 +1,12 @@
 const drawingBoard = document.getElementById("drawing-container");
 
-const userInput = document.getElementById("board-size");
+const userInput = document.getElementById("board-size-input");
 
 const applyBtn = document.getElementById("apply-btn");
 const eraseBtn = document.getElementById("erase-btn");
 const multicolorBtn = document.getElementById("multicolor-btn");
+
+let drawOn = true;
 
 
 
@@ -41,6 +43,18 @@ function clearBoard() {
 }
 
 applyBtn.addEventListener('click', () => {
-    fillBoard(userInput.value);
+    
+    if (userInput.value > 100 || userInput.value < 1) {
+        userInput.style.border = "2px black solid";
+    }
+    else {
+        fillBoard(userInput.value);
+        userInput.style.border = "0";
+    }
+
     userInput.value = "";
+});
+
+eraseBtn.addEventListener('click', () => {
+    drawOn = false;
 });
