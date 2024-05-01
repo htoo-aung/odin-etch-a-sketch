@@ -6,7 +6,9 @@ const applyBtn = document.getElementById("apply-btn");
 const drawBtn = document.getElementById("draw-btn");
 const eraseBtn = document.getElementById("erase-btn");
 const multicolorBtn = document.getElementById("multicolor-btn");
+const colourSelect = document.getElementById("colour-select");
 
+let colour = "red";
 let drawOn = true;
 let multicolor = false;
 
@@ -57,14 +59,23 @@ applyBtn.addEventListener('click', () => {
 
 drawBtn.addEventListener('click', () => {
     drawOn = true;
+    drawBtn.style.border = "2px #7CC47C solid";
+    eraseBtn.style.border = "2px #000000 solid";
+    multicolorBtn.style.border = "2px #000000 solid"
 });
 
 eraseBtn.addEventListener('click', () => {
     drawOn = false;
+    eraseBtn.style.border = "2px #7CC47C solid";
+    drawBtn.style.border = "2px #000000 solid";
+    multicolorBtn.style.border = "2px #000000 solid"
 });
 
 multicolorBtn.addEventListener('click', () => {
     multicolor = true;
+    multicolorBtn.style.border = "2px #7CC47C solid"
+    drawBtn.style.border = "2px #000000 solid";
+    eraseBtn.style.border = "2px #000000 solid";
 });
 
 

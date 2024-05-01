@@ -21,6 +21,11 @@ h1 {
     color: #feeb00;
 }
 
+.btn {
+    border: 2px #000000 solid;
+    border-radius: 4px;
+}
+
 .box {
     margin: 0;
     background-color: #ffffff;
@@ -43,6 +48,10 @@ h1 {
 #board-size-input {
     border: 2px #000000 solid;
     border-radius: 4px;
+}
+
+#draw-btn {
+    border-color: #7CC47C;
 }
 
 #colour-select-label {
