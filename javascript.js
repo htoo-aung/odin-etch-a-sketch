@@ -9,7 +9,7 @@ const eraseBtn = document.getElementById("erase-btn");
 const multicolorBtn = document.getElementById("multicolor-btn");
 const colourSelect = document.getElementById("colour-select");
 
-let colour = "black";
+let colour = colourSelect.value;
 let drawOn = true;
 let multicolor = false;
 
@@ -102,6 +102,10 @@ multicolorBtn.addEventListener('click', () => {
     multicolorBtn.style.border = "2px #7CC47C solid"
     drawBtn.style.border = "2px #000000 solid";
     eraseBtn.style.border = "2px #000000 solid";
+});
+
+colourSelect.addEventListener('change', () => {
+    colour = colourSelect.value;
 });
 
 fillBoard(drawingBoard, 16);
