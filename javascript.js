@@ -47,7 +47,8 @@ function clearBoard(drawingContainer) {
 function draw(drawingContainer) {
     const boxes = drawingContainer.querySelectorAll('div');
 
-    const makeBlack = event => {
+    const drawing = event => {
+        event.preventDefault();
         if (drawOn === true) {
             event.target.style.backgroundColor = colour;
         }
@@ -57,9 +58,12 @@ function draw(drawingContainer) {
     }
 
     boxes.forEach((box) => {
-        box.addEventListener('mousedown', makeBlack);
+        box.addEventListener('mousedown', (event) => {
+            event.preventDefault();
+            drawing(event);
+        });
         box.addEventListener("mouseover", event => {
-            if (event.buttons == 1) makeBlack(event);
+            if (event.buttons == 1) drawing(event);
         });
     });
 }
