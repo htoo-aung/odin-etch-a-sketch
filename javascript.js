@@ -49,7 +49,12 @@ function draw(drawingContainer) {
 
     boxes.forEach((box) => {
         box.addEventListener('mouseenter', () => {
-            box.style.backgroundColor = colour;
+            if (drawOn === true) {
+                box.style.backgroundColor = colour;
+            }
+            else {
+                box.style.backgroundColor = "#ffffff";
+            }
         });
     });
 }
@@ -65,6 +70,8 @@ applyBtn.addEventListener('click', () => {
     }
 
     userInput.value = "";
+
+    draw(drawingBoard);
 });
 
 drawBtn.addEventListener('click', () => {
