@@ -47,14 +47,19 @@ function clearBoard(drawingContainer) {
 function draw(drawingContainer) {
     const boxes = drawingContainer.querySelectorAll('div');
 
+    const makeBlack = event => {
+        if (drawOn === true) {
+            event.target.style.backgroundColor = colour;
+        }
+        else {
+            event.target.style.backgroundColor = "#ffffff";
+        }
+    }
+
     boxes.forEach((box) => {
-        box.addEventListener('mouseenter', () => {
-            if (drawOn === true) {
-                box.style.backgroundColor = colour;
-            }
-            else {
-                box.style.backgroundColor = "#ffffff";
-            }
+        box.addEventListener('mousedown', makeBlack);
+        box.addEventListener("mouseover", event => {
+            if (event.buttons == 1) makeBlack(event);
         });
     });
 }
