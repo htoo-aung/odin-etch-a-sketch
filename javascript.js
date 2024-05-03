@@ -13,14 +13,22 @@ let colour = colourSelect.value;
 let drawOn = true;
 let multicolor = false;
 
-
+/**
+ * Fills a div element with smaller div boxes by box*box. Size for the div boxes are calculated.
+ * 
+ * @param {Element} drawingContainer - An element div to be filled.
+ * @param {number} boxes - A number to define how many boxes are in a row and column.
+ */
 function fillBoard(drawingContainer, boxes) {
     const dimensions = boxes * boxes;
 
+    // Get the dimensions of the drawing canvas and store in references.
     const drawingBoardDim = window.getComputedStyle(drawingContainer);
     const drawingBoardWidth = drawingBoardDim.width.slice(0, -2);
     const drawingBoardHeight = drawingBoardDim.height.slice(0, -2);
     
+    // Calculate our "pixels"/box by dividing the canvas dimensions by how many boxes 
+    // - leads to even boxes 
     const boxWidth = Number(drawingBoardWidth) / boxes;
     const boxHeight = Number(drawingBoardHeight) / boxes;
 
