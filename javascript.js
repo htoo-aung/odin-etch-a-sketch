@@ -100,6 +100,10 @@ applyBtn.addEventListener('click', () => {
     draw(drawingBoard);
 });
 
+clearBtn.addEventListener('click', () => {
+    eraseAll(drawingBoard);
+});
+
 drawBtn.addEventListener('click', () => {
     drawOn = true;
     drawBtn.style.border = "2px #7CC47C solid";
