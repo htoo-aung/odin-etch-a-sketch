@@ -1,4 +1,5 @@
 const drawingBoard = document.getElementById("drawing-container");
+const boxes = drawingBoard.querySelectorAll("div");
 
 const userInput = document.getElementById("board-size-input");
 
@@ -43,6 +44,16 @@ function clearBoard(drawingContainer) {
     });
 }
 
+function draw(drawingContainer) {
+    const boxes = drawingContainer.querySelectorAll('div');
+
+    boxes.forEach((box) => {
+        box.addEventListener('mouseenter', () => {
+            box.style.backgroundColor = colour;
+        });
+    });
+}
+
 applyBtn.addEventListener('click', () => {
     if (userInput.value > 100 || userInput.value < 1) {
         userInput.style.border = "2px #ffcc00 solid";
@@ -77,11 +88,5 @@ multicolorBtn.addEventListener('click', () => {
     eraseBtn.style.border = "2px #000000 solid";
 });
 
-
-
-
-
-
-
-
 fillBoard(drawingBoard, 16);
+draw(drawingBoard);
