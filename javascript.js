@@ -34,13 +34,12 @@ function fillBoard(drawingContainer, boxes) {
     }
 }
 
-function clearBoard() {
-    const boxes = document.querySelectorAll("#drawing-container div");
-
+function clearBoard(drawingContainer) {
+    const boxes = drawingContainer.querySelectorAll('div');
     // Check if board is empty
 
     boxes.forEach((box) => {
-        box.remove()
+        box.remove();
     });
 }
 
@@ -49,7 +48,7 @@ applyBtn.addEventListener('click', () => {
         userInput.style.border = "2px #ffcc00 solid";
     }
     else {
-        clearBoard();
+        clearBoard(drawingBoard);
         fillBoard(drawingBoard, userInput.value);
         userInput.style.border = "2px #000000 solid";
     }
