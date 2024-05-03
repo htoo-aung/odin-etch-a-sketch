@@ -4,6 +4,7 @@ const boxes = drawingBoard.querySelectorAll("div");
 const userInput = document.getElementById("board-size-input");
 
 const applyBtn = document.getElementById("apply-btn");
+const clearBtn = document.getElementById("clear-btn");
 const drawBtn = document.getElementById("draw-btn");
 const eraseBtn = document.getElementById("erase-btn");
 const multicolorBtn = document.getElementById("multicolor-btn");
@@ -41,6 +42,14 @@ function fillBoard(drawingContainer, boxes) {
 
         drawingContainer.appendChild(box);
     }
+}
+
+function eraseAll(drawingContainer) {
+    const boxes = drawingContainer.querySelectorAll('div');
+
+    boxes.forEach((box) => {
+        box.style.backgroundColor = "#ffffff";
+    });
 }
 
 function clearBoard(drawingContainer) {

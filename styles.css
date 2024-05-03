@@ -70,6 +70,7 @@ h1 {
 }
 
 #drawing-container {
+    border: 4px #000000 solid;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
