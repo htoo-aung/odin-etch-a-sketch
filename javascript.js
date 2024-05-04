@@ -3,6 +3,7 @@ const boxes = drawingBoard.querySelectorAll("div");
 
 const userInput = document.getElementById("board-size-input");
 
+/* Utilities */
 const applyBtn = document.getElementById("apply-btn");
 const clearBtn = document.getElementById("clear-btn");
 const drawBtn = document.getElementById("draw-btn");
@@ -62,11 +63,16 @@ function clearBoard(drawingContainer) {
 }
 
 function draw(drawingContainer) {
+    const multicolours = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
     const boxes = drawingContainer.querySelectorAll('div');
 
     const drawing = event => {
         event.preventDefault();
-        if (drawOn === true) {
+        if (drawOn === true && multicolor === true) {
+            let chosenColour = multicolours[Math.floor(Math.random() * multicolours.length)];
+            event.target.style.backgroundColor = chosenColour;
+        }
+        else if (drawOn === true) {
             event.target.style.backgroundColor = colour;
         }
         else {
@@ -80,7 +86,9 @@ function draw(drawingContainer) {
             drawing(event);
         });
         box.addEventListener("mouseover", event => {
-            if (event.buttons == 1) drawing(event);
+            if (event.buttons == 1) {
+                drawing(event);
+            }
         });
     });
 }
@@ -120,6 +128,7 @@ eraseBtn.addEventListener('click', () => {
 
 multicolorBtn.addEventListener('click', () => {
     multicolor = true;
+    drawOn = true;
     multicolorBtn.style.border = "2px #7CC47C solid"
     drawBtn.style.border = "2px #000000 solid";
     eraseBtn.style.border = "2px #000000 solid";
