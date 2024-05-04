@@ -45,6 +45,11 @@ function fillBoard(drawingContainer, boxes) {
     }
 }
 
+/**
+ * Erases all modifications a user has made on the canvas.
+ * 
+ * @param {Element} drawingContainer An element div to erase.
+ */
 function eraseAll(drawingContainer) {
     const boxes = drawingContainer.querySelectorAll('div');
 
@@ -53,6 +58,11 @@ function eraseAll(drawingContainer) {
     });
 }
 
+/**
+ * Removes all divs inside the element.
+ * 
+ * @param {Element} drawingContainer An element div to clear.
+ */
 function clearBoard(drawingContainer) {
     const boxes = drawingContainer.querySelectorAll('div');
     // Check if board is empty
@@ -62,6 +72,11 @@ function clearBoard(drawingContainer) {
     });
 }
 
+/**
+ * Allows user to draw and erase on the canvas, with a multicolour modifier to the pen.
+ * 
+ * @param {Element} drawingContainer An element div to modify/draw.
+ */
 function draw(drawingContainer) {
     const multicolours = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
     const boxes = drawingContainer.querySelectorAll('div');
