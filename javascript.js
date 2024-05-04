@@ -114,6 +114,7 @@ clearBtn.addEventListener('click', () => {
 
 drawBtn.addEventListener('click', () => {
     drawOn = true;
+    multicolor = false;
     drawBtn.style.border = "2px #7CC47C solid";
     eraseBtn.style.border = "2px #000000 solid";
     multicolorBtn.style.border = "2px #000000 solid"
